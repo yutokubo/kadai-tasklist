@@ -10,15 +10,16 @@
             <table class="table table-hover table-bordered">
                 <thead>
                     <tr>
-                        <th>id</th>
-                        <th>タスク</th>
+                        <th class="col-sm-1 text-center">id</th>
+                        <th class="text-center">ステータス</th>
+                        <th class="text-center">タスク</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($tasks as $task)
                     <tr>
-                        <td>{!! link_to_route('tasks.show', $task->id, ['task' => $task->id]) !!}</td>
-                         <!--<td>{{ $task->id }}</td>-->
+                        <td class="text-center">{!! link_to_route('tasks.show', $task->id, ['task' => $task->id]) !!}</td>
+                        <td class="col-sm-3 text-center">{{ $task->status}}</td>
                         <td>{{ $task->content }}</td>
                     </tr>
                     @endforeach
