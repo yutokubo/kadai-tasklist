@@ -27,6 +27,7 @@ class CreateTasksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tasks');
+        Schema::dropIfExists('tasks'); // 外部キー制約の削除
+        
     }
 }
